@@ -9,6 +9,8 @@ public class DeveloperProjectFinder {
             if(entry.getValue().contains(developer))
                 result.add(entry.getKey());
         }
+        Collections.sort(result, String.CASE_INSENSITIVE_ORDER);
+        Collections.reverse(result);
         result.sort(Comparator.comparingInt(String::length).reversed());
         return result;
     }
